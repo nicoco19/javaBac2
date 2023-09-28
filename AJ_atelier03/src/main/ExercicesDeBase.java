@@ -69,7 +69,7 @@ public class ExercicesDeBase {
         System.out.println("predicats1");
         Stream<Transaction> s = transactions
                 .stream()
-                .filter(t -> t.getYear() == 2011); // TODO filtrer
+                .filter(t -> t.getYear() == 2011);
         System.out.println("sout du Stream brut " + s);
         s.forEach(System.out::println);
     }
@@ -78,7 +78,8 @@ public class ExercicesDeBase {
 
         System.out.println("predicats2");
         var s = transactions
-                .stream().filter(e -> e.getValue() > 600); // TODO filtrer
+                .stream()
+                .filter(e -> e.getValue() > 600);
 
         s.forEach(System.out::println);
     }
@@ -150,7 +151,7 @@ public class ExercicesDeBase {
         var valeurMax = transactions
                 .stream()
                 .map(a -> a.getValue())
-                .reduce( 0 ,Integer::max );
+                .reduce( 0 ,Integer::max);
         System.out.println(valeurMax);
     }
 
