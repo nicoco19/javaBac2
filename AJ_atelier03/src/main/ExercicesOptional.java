@@ -92,12 +92,6 @@ public class ExercicesOptional {
     }
 
 
-
-
-
-
-
-
     private void optional1() {
         System.out.println("optional1");
 
