@@ -1,5 +1,6 @@
 package lambda;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -14,8 +15,14 @@ public class Lambda {
      * @return une liste contenant les integer qui respectent match
      */
     public static List<Integer> allMatches(List<Integer> list, Predicate<Integer> match) {
-        //TODO
-        return null;
+        List<Integer> entiers = new ArrayList<>();
+        for (Integer entier : list) {
+
+            if (match.test(entier)){
+                entiers.add(entier);
+            }
+        }
+        return entiers;
     }
 
     /**
@@ -26,9 +33,26 @@ public class Lambda {
      * @return une liste contenant les integer transformés par transform
      */
     public static List<Integer> transformAll(List<Integer> list, Function<Integer, Integer> transform) {
-        //TODO
-        return null;
+        List<Integer> entiers = new ArrayList<>();
+        for (Integer entier : list) {
+
+            entiers.add(transform.apply(entier));
+        }
+        return entiers;
     }
 
+    public static <E> List<E> filter(List<E> list, Predicate<E> match){
+
+        return list.stream()
+                   .filter(match)
+                   .toList();
+    }
+
+    public static <T,E> List<T> map(List<E> list, Function<E, T> transform) {
+
+        return list.stream()
+                   .map(transform)
+                   .toList();
+    }
 
 }

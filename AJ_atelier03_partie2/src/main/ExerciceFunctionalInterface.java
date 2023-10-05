@@ -6,6 +6,8 @@ import domaine.Genre;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class ExerciceFunctionalInterface {
@@ -32,10 +34,19 @@ public class ExerciceFunctionalInterface {
      * Replacer l'instatiation de la classe EmployeComparator par un lambda
      */
     private static void exComparator() {
-        employes.sort(new EmployeComparator());
+        /*employes.sort(new EmployeComparator());
+        System.out.println("Employés triés:");
+        System.out.println(employes);*/
+
+        employes.sort((e1,e2) -> {
+            if(e1.getTaille() == e2.getTaille()){
+                return e1.getNom().compareTo(e2.getNom());
+            }else{
+                return e2.getTaille() - e1.getTaille(); // de la plus grande taille à la plus petite
+            }
+        });
         System.out.println("Employés triés:");
         System.out.println(employes);
-
 
     }
 
@@ -45,15 +56,28 @@ public class ExerciceFunctionalInterface {
      * remplacer le lambda en paramètre par une instance de celle-ci.
      */
     private static void exMap() {
-        Stream<String> listeNom = employes.stream()
+
+       /* Stream<String> listeNom = employes.stream()
                 .filter(e -> e.getGenre() == Genre.HOMME)
                 .sorted(Comparator.comparingInt(Employe::getTaille)
                         .reversed())
                 .map( e -> e.getNom());
-        listeNom.forEach(System.out::println);
+        listeNom.forEach(System.out::println);*/
 
+        Stream<String> listeNom = employes.stream()
+                .filter(new code_theorie.PredicatGenreHomme())
+                .sorted(Comparator.comparingInt(Employe::getTaille)
+                        .reversed())
+                .map(new FunctionExMap());
+        listeNom.forEach(System.out::println);
     }
 
+    private static class FunctionExMap implements Function<Employe,String> { // création de la méthode que l'on appel
+        @Override
+        public String apply(Employe employe) { // la méthode .map va appeler apply() sur chacun des employés contenus dans le stream
+            return employe.getNom();
+        }
+    }
 
     /**
      * Trouver le type du paramètre de la méthode foreach.
@@ -61,8 +85,14 @@ public class ExerciceFunctionalInterface {
      * remplacer le lambda en paramètre par une instance de celle-ci.
      */
     private static void exForEach(){
-        employes.forEach(e -> System.out.println(e));
+        employes.forEach(new FunctionForEach());
 
+    }
 
+    private static class FunctionForEach implements Consumer<Employe> {
+        @Override
+        public void accept(Employe employe) {
+            System.out.println(employe);
+        }
     }
 }
