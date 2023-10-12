@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3f4d27a-cd1a-4587-8bd6-d95329420daa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lambda/Lambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lambda/Lambda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lambda/TestLambda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lambda/TestLambda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ExerciceFunctionalInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ExerciceFunctionalInterface.java" afterDir="false" />
-    </list>
+    <list default="true" id="a3f4d27a-cd1a-4587-8bd6-d95329420daa" name="Changes" comment="finish ex jusq'au 1.8" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,8 +62,16 @@
       <option name="presentableId" value="Default" />
       <updated>1696490729631</updated>
       <workItem from="1696490730978" duration="7000" />
-      <workItem from="1696491461106" duration="7717000" />
+      <workItem from="1696491461106" duration="8005000" />
     </task>
+    <task id="LOCAL-00001" summary="finish ex jusq'au 1.8">
+      <created>1696516639607</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696516639607</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,5 +87,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finish ex jusq'au 1.8" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish ex jusq'au 1.8" />
   </component>
 </project>
