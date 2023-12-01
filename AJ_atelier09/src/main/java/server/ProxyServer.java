@@ -1,6 +1,7 @@
 package server;
 
 import domaine.Query;
+import domaine.QueryFactory;
 import domaine.QueryFactoryImpl;
 
 import java.util.Scanner;
@@ -8,9 +9,9 @@ import java.util.Scanner;
 public class ProxyServer {
     Scanner scanner = new Scanner(System.in);
 
-    QueryFactoryImpl queryFactory = new QueryFactoryImpl();
+    QueryFactory queryFactory;
 
-    public ProxyServer(QueryFactoryImpl queryFactory) {
+    public ProxyServer(QueryFactory queryFactory) {
         this.queryFactory = queryFactory;
     }
 
